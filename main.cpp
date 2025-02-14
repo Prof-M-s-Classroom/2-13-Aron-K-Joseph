@@ -125,6 +125,17 @@ public:
 
    void reverselist(){
         //TODO:Write a function to reverse the list using the logic from the slide.
+        Node<T>* prev, curr, next;
+        prev = NULL;
+        curr = head;
+        while(curr!=NULL)
+        {
+            next = curr->nextNode;
+            curr->nextNode = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
     }
 
     void print() {
